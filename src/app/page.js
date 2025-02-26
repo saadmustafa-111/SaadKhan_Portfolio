@@ -5,7 +5,10 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
-import Skillsbar from "./components/Skillsbar"
+import Skillsbar from "./components/Skillsbar";
+import Map from "./components/Location";
+import Question from "./components/Question";
+
 
 export default function Home() {
   return (
@@ -17,7 +20,14 @@ export default function Home() {
         <AboutSection />
         <ProjectsSection />
         <EmailSection />
-        <Skillsbar/>
+        <Skillsbar />
+        <div>
+          <h5 className="text-2xl md:text-4xl font-bold mb-10 text-white">
+            Location
+          </h5>
+          <Map />
+        </div>
+        <Question/>
       </div>
       <Footer />
     </main>

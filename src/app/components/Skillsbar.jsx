@@ -9,12 +9,12 @@ export default function Skillsbar() {
 
   return (
     <>
-      <div className="h-[450px] flex justify-end items-center bg-[#121212] dark:bg-gray-800 px-10">
+      <div id="skill" className="h-[450px] flex justify-end items-center bg-[#121212] dark:bg-gray-800 px-10">
         <div className="flex justify-start items-center h-[500px] w-[500px] mr-28 mt-20">
           <img src="/images/skill.avif" alt="" />
         </div>
         <div className="max-w-xl w-full">
-          <h4 className="text-3xl md:text-5xl font-bold mb-10 text-white">
+          <h4 id="skill" className="text-3xl md:text-5xl font-bold mb-10 text-white">
             Skills
           </h4>
           {skills.map((skill, index) => (
