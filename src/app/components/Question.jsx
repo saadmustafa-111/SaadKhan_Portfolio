@@ -1,7 +1,7 @@
 export default function Question() {
   return (
     <>
-      <section class="text-gray-100 py-12 min-h-screen">
+      <section class="text-gray-100 py-12 h-[500px]">
         <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 class="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">
             Frequently Asked Questions

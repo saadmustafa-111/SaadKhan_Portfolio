@@ -8,6 +8,7 @@ import AchievementsSection from "./components/AchievementsSection";
 import Skillsbar from "./components/Skillsbar";
 import Map from "./components/Location";
 import Question from "./components/Question";
+import Whyus from "./components/Whyus";
 
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
           <Map />
         </div>
         <Question/>
+    <Whyus/>
       </div>
       <Footer />
     </main>
