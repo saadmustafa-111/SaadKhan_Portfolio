@@ -10,7 +10,6 @@ import Map from "./components/Location";
 import Question from "./components/Question";
 import Whyus from "./components/Whyus";
 
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
@@ -28,8 +27,8 @@ export default function Home() {
           </h5>
           <Map />
         </div>
-        <Question/>
-    <Whyus/>
+        <Question />
+        <Whyus />
       </div>
       <Footer />
     </main>
