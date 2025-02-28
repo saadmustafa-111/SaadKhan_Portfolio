@@ -24,8 +24,7 @@ export default function Home() {
         <Skillsbar />
         <Question />
         <Whyus />
-        <Topbutton /> 
-        
+        <Topbutton />
       </div>
       <Footer />
     </main>
