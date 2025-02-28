@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 
+
 const navLinks = [
   {
     title: "About",
@@ -20,11 +21,11 @@ const navLinks = [
     path: "#contact",
   },
   {
-    title: "Skill", // Added Skill Button
+    title: "Skill",
     path: "#skill",
   },
   {
-    title: "Location", // Added Location Button
+    title: "Location", 
     path: "#location",
   },
 ];
@@ -33,18 +34,19 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
+    <>
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link href={"/"}>
           <Image
             src="/images/logo.png"
             alt="Malahima Logo"
-            width={100} // Adjust width as needed
-            height={100} // Adjust height as needed
-            className="h-[40px] w-auto md:h-[50px]" // Adjust for responsiveness
+            width={100} 
+            height={100} 
+            className="h-[40px] w-auto md:h-[50px]"
           />
         </Link>
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu block md:hidden">         
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
@@ -72,8 +74,10 @@ const Navbar = () => {
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
-    </nav>
+   </nav>
+   </>
   );
 };
+
 
 export default Navbar;
