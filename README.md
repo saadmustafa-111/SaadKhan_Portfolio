@@ -1,34 +1,64 @@
-<<<<<<< HEAD
-# Portfolio Website
+# 🚀 My Portfolio Website
 
-This is a portfolio website built with Next.js and Tailwind CSS. It showcases your skills, projects, and achievements in an elegant and responsive design.
+Welcome to my **personal portfolio website**! This project showcases my web development skills, projects, and experience.
 
-## Installation
+## 🌟 Features
+- **Built with Next.js & TypeScript**
+- **Styled using Tailwind CSS**
+- **Fully responsive design**
+- **Modern UI/UX with animations**
+- **Dark & Light mode support**
+- **SEO-friendly and optimized for performance**
 
-1. Clone the repository: `git clone https://github.com/judygab/nextjs-portfolio.git`
-2. Navigate to the project directory: `cd portfolio-website`
-3. Install the dependencies: `npm install`
+## 🛠️ Tech Stack
+- **Framework:** Next.js (React)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** React Hooks
+- **Hosting:** Vercel (or any preferred platform)
 
-## Usage
+## 📸 Preview
+[Portfolio Preview](https://malahima-amir.vercel.app/)
 
-1. Start the development server: `npm run dev`
-2. Open your browser and visit `http://localhost:3000` to view the website.
+## 🚀 Getting Started
+To run this project locally:
 
-## Dependencies
+```sh
+# Clone the repository
+git clone https://github.com/malahimaamir/your-portfolio.git
 
-The following dependencies are required for this project:
+# Install dependencies
+npm install  # or yarn install
 
-- Next.js: A React framework for server-side rendering and static site generation.
-- Tailwind CSS: A highly customizable CSS framework.
-- React: A JavaScript library for building user interfaces.
-- React Icons: A collection of popular icons for React projects.
-- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
-- Resend: Resend is the email API for developers.
+# Run the development server
+npm run dev  # or yarn dev
+```
 
-## License
+## 📂 Project Structure
+```
+.
+├── src
+│   ├── app
+│   ├── components
+│   ├── pages
+│   ├── styles
+│   ├── assets
+│   └── utils
+├── public
+├── .gitignore
+├── package.json
+├── README.md
+└── next.config.js
+```
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as per the terms of the license.
+## 📌 Live Demo
+Check out the live version of my portfolio: (https://malahima-amir.vercel.app/)
 
-=======
-# Portfolio
->>>>>>> 191dde470e504f255fb3bf7222cc9988d2c81a6d
+## 📬 Contact
+If you have any questions or want to connect:
+- **Email:** malahimaamir@gmail.com
+- **LinkedIn:** (https://www.linkedin.com/in/malahima-amir-408069287/)
+- **GitHub:** ((https://github.com/malahimaamir)
+
+---
+💡 _Feel free to fork and customize this project! If you like my work, don't forget to ⭐ this repository._
