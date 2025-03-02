@@ -35,7 +35,8 @@ const HeroSection = () => {
       update() {
         this.x += Math.cos(this.angle) * this.speed;
         this.y += Math.sin(this.angle) * this.speed;
-        if (this.x < 0 || this.x > canvas.width) this.angle = Math.PI - this.angle;
+        if (this.x < 0 || this.x > canvas.width)
+          this.angle = Math.PI - this.angle;
         if (this.y < 0 || this.y > canvas.height) this.angle = -this.angle;
       }
 
@@ -61,7 +62,10 @@ const HeroSection = () => {
     const connectParticles = () => {
       for (let a = 0; a < particles.length; a++) {
         for (let b = a + 1; b < particles.length; b++) {
-          const dist = Math.hypot(particles[a].x - particles[b].x, particles[a].y - particles[b].y);
+          const dist = Math.hypot(
+            particles[a].x - particles[b].x,
+            particles[a].y - particles[b].y
+          );
           if (dist < 120) {
             ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 120})`;
             ctx.lineWidth = 0.7;
@@ -88,39 +92,46 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-[550px]  flex items-center justify-center overflow-hidden">
+    <section className="relative h-[550px] flex items-center justify-center overflow-hidden">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
       <div className="relative z-10 text-center text-white p-5">
         <h1 className="text-4xl sm:text-5xl lg:text-8xl font-extrabold mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-            HI, I&apos;m {" "}
+            HI, I&apos;m{" "}
           </span>
           <br />
           <TypeAnimation
-            sequence={["Malahima Amir", 1000, "Front-End Developer", 1000, "UI/UX Designer", 1000]}
+            sequence={[
+              "Malahima Amir",
+              1000,
+              "Front-End Developer",
+              1000,
+              "UI/UX Designer",
+              1000,
+            ]}
             wrapper="span"
             speed={50}
             repeat={Infinity}
           />
         </h1>
         <div>
-            <Link
-              href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
-            >
-              Hire Me
-            </Link>
-            <Link
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
-            >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </Link>
-          </div>
+          <Link
+            href="/#contact"
+            className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+          >
+            Hire Me
+          </Link>
+          <Link
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
+          >
+            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              Download CV
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );

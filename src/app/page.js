@@ -10,7 +10,6 @@ import Question from "./components/Question";
 import Whyus from "./components/Whyus";
 import Topbutton from "./components/Topbutton";
 
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
@@ -25,7 +24,6 @@ export default function Home() {
         <Question />
         <Whyus />
         <Topbutton />
-
       </div>
       <Footer />
     </main>
