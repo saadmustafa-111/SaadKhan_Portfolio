@@ -18,7 +18,7 @@ Welcome to my **personal portfolio website**! This project showcases my web deve
 - **Hosting:** Vercel (or any preferred platform)
 
 ## 📸 Preview
-![Portfolio Preview](https://malahima-amir.vercel.app/)
+[Portfolio Preview](https://malahima-amir.vercel.app/)
 
 ## 🚀 Getting Started
 To run this project locally:
