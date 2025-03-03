@@ -25,3 +25,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes slide {
+  0%, 20% { transform: translateX(0%); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(0%); }
+}
+
+.animate-slide {
+  animation: slide 12s infinite ease-in-out;
+}

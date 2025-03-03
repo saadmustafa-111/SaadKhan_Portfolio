@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "Portfolio Website",
-    description: "webite about yourself",
+    description: "Showcases skills, projects, and achievements with interactive and responsive design.",
     image: "/images/projects/1.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -17,7 +17,7 @@ const projectsData = [
   {
     id: 2,
     title: "Carleybay",
-    description: "childs care project",
+    description: "Provides essential child services, education, and safety through technology.",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -26,7 +26,7 @@ const projectsData = [
   {
     id: 3,
     title: "E-commerce Application",
-    description: "Project 3 description",
+    description: "Enables online shopping with secure payments, recommendations, and real-time updates.",
     image: "/images/projects/3.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -35,7 +35,7 @@ const projectsData = [
   {
     id: 4,
     title: "Cooking Application",
-    description: "Project 4 description",
+    description: "Offers recipes, tutorials, and meal planning for all skill levels.",
     image: "/images/projects/4.jpg",
     tag: ["All", "Mobile"],
     gitUrl: "/",
@@ -44,7 +44,7 @@ const projectsData = [
   {
     id: 5,
     title: "CoinChance",
-    description: "BLockchain and wallet joining",
+    description: "Ensures secure transactions, crypto management, and decentralization via blockchain.",
     image: "/images/projects/5.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -53,7 +53,7 @@ const projectsData = [
   {
     id: 6,
     title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    description: "Covers front-end, back-end, databases, APIs, authentication, and deployment.",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
     gitUrl: "/",

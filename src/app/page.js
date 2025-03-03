@@ -9,6 +9,7 @@ import Skillsbar from "./components/Skillsbar";
 import Question from "./components/Question";
 import Whyus from "./components/Whyus";
 import Topbutton from "./components/Topbutton";
+import AutoSlidingCarousel from "./components/AutoSlidingCarousel";
 
 export default function Home() {
   return (
@@ -20,10 +21,12 @@ export default function Home() {
         <AboutSection />
         <ProjectsSection />
         <EmailSection />
+        <AutoSlidingCarousel />
         <Skillsbar />
         <Question />
         <Whyus />
         <Topbutton />
+        
       </div>
       <Footer />
     </main>

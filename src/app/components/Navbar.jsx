@@ -23,11 +23,7 @@ const navLinks = [
   {
     title: "Skill",
     path: "#skill",
-  },
-  {
-    title: "Location", 
-    path: "#location",
-  },
+  },  
 ];
 
 const Navbar = () => {
