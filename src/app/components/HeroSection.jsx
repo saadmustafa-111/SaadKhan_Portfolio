@@ -97,13 +97,11 @@ const HeroSection = () => {
       <div className="relative z-10 text-center text-white p-5">
         <h1 className="text-4xl sm:text-5xl lg:text-8xl font-extrabold mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-            HI, I&apos;m{" "}
+            HI, I am Malahima Amir A{" "}
           </span>
           <br />
           <TypeAnimation
-            sequence={[
-              "Malahima Amir",
-              1000,
+            sequence={[              
               "Front-End Developer",
               1000,
               "UI/UX Designer",
