@@ -17,13 +17,15 @@ const achievementsList = [
   },
   {
     prefix: "~",
-    metric: "Users",
+    metric: "clients",
     value: "50",
+    postfix: "+",
   },
   
   {
-    metric: "Years",
+    metric: "Experience Years",
     value: "2",
+    postfix: "+",
   },
 ];
 

@@ -44,7 +44,7 @@ const EmailSection = () => {
               type="email"
               id="email"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="malahimaamir@gmail.com"
+              placeholder="abc@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -55,7 +55,7 @@ const EmailSection = () => {
               type="text"
               id="subject"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Just saying hi"
+              placeholder="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
             />
@@ -65,7 +65,7 @@ const EmailSection = () => {
             <textarea
               id="message"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Let's talk about..."
+              placeholder="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />

@@ -1,7 +1,7 @@
 export default function Whyus(){
     return(
         <>
-        <section class="text-gray-700 mt-[500px]">
+        <section class="text-gray-700 mt-[100px]">
   <h2 class="flex justify-center mt-10 text-4xl font-extrabold text-white sm:text-5xl">Why Me?</h2>
 
 
