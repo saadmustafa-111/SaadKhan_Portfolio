@@ -1,9 +1,9 @@
 const PricingPlans = () => {
     return (
-      <section className=" py-12">
+      <section className=" py-12 mt-[100px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-extrabold text-white sm:text-5xl">Pricing Plans</h2>
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl">Services , that we provide</h2>
             <p className="mt-4 text-xl text-gray-400">Choose a plan that suits your needs</p>
           </div>
   

@@ -20,14 +20,14 @@ export default function Home() {
         <HeroSection />
         <AchievementsSection />
         <AboutSection />
-        <ProjectsSection />
-        <EmailSection />
+        <ProjectsSection />        
         <AutoSlidingCarousel />
         <Skillsbar />
         <Question />
         <Whyus />
         <Topbutton />
         <Pricing/>
+        <EmailSection />
       </div>
       <Footer />
     </main>

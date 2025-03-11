@@ -44,7 +44,7 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} alt="data" />
+        <Image className="rounded-3xl" src="/images/about-image.png" width={500} height={500} alt="data" />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -52,8 +52,7 @@ const AboutSection = () => {
             JavaScript, and React.js. Throughout the years, I have provided
             premium solutions to my clients that ensured a superb user
             experience and performance on all devices. My collaboration with
-            cross-functional teams, mentorship of junior developers, and
-            leadership in planning and executing projects has given me the
+            cross-functional teams and executing projects has given me the
             knowledge and confidence to approach and best solve any challenges
             that arise in my domain.
           </p>
