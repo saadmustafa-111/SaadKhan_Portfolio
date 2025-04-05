@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://malahima-amir.vercel.app/
+
+Sitemap: https://malahima-amir.vercel.app/sitemap.xml
