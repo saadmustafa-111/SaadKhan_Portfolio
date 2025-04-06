@@ -55,7 +55,7 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
             I specialize in developing responsive web applications using HTML,
-            CSS, JavaScript,Typescript, React.js, and Next.js. Over the years, I've
+            CSS, JavaScript,Typescript, React.js, and Next.js. Over the years, I&apos;ve 
             delivered high-quality solutions that provide exceptional user
             experiences and optimal performance across all devices. My
             experience collaborating with cross-functional teams and developing
