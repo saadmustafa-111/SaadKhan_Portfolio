@@ -37,7 +37,7 @@ const Navbar = () => {
     <>
       <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
         <div className="flex container text-[#ADB7BE] lg:py-4 flex-wrap items-center font-serif justify-between sm:text-xl mx-auto px-4 py-2">
-          Malahima
+          Malahima Amir
           <div className="mobile-menu block md:hidden">
             {!navbarOpen ? (
               <button
