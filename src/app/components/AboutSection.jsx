@@ -54,13 +54,13 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Im a specialist in responsive web app development using HTML, CSS,
-            JavaScript,React.js and Next.js. Throughout the years, I have
-            provided premium solutions to my clients that ensured a superb user
-            experience and performance on all devices. My collaboration with
-            cross-functional teams and executing projects has given me the
-            knowledge and confidence to approach and best solve any challenges
-            that arise in my domain.{" "}
+            I specialize in developing responsive web applications using HTML,
+            CSS, JavaScript,Typescript, React.js, and Next.js. Over the years, I've
+            delivered high-quality solutions that provide exceptional user
+            experiences and optimal performance across all devices. My
+            experience collaborating with cross-functional teams and developing
+            various projects has equipped me with the skills and confidence to
+            tackle and resolve any challenges in my field effectively.{" "}
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
