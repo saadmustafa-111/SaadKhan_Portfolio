@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 
-
 const navLinks = [
   {
     title: "About",
@@ -23,7 +22,7 @@ const navLinks = [
   {
     title: "Skill",
     path: "#skill",
-  },  
+  },
 ];
 
 const Navbar = () => {
@@ -37,7 +36,11 @@ const Navbar = () => {
     <>
       <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
         <div className="flex container text-[#ADB7BE] lg:py-4 flex-wrap items-center font-serif justify-between sm:text-xl mx-auto px-4 py-2">
-          Malahima Amir
+          <div>
+            Malahima
+            <span className="hidden sm:inline"> Amir</span>
+          </div>
+
           <div className="mobile-menu block md:hidden">
             {!navbarOpen ? (
               <button
@@ -59,13 +62,19 @@ const Navbar = () => {
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  <NavLink href={link.path} title={link.title} onClick={handleNavClick} />
+                  <NavLink
+                    href={link.path}
+                    title={link.title}
+                    onClick={handleNavClick}
+                  />
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        {navbarOpen ? <MenuOverlay links={navLinks} closeMenu={handleNavClick} /> : null}
+        {navbarOpen ? (
+          <MenuOverlay links={navLinks} closeMenu={handleNavClick} />
+        ) : null}
       </nav>
     </>
   );
