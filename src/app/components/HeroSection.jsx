@@ -1,9 +1,6 @@
 "use client";
-
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
@@ -108,11 +105,6 @@ const HeroSection = () => {
               1000,
               "A Web Designer",
               1000,
-              "A JavaScript Enthusiast",
-              1000,
-              "A Creative Problem Solver",
-              1000,
-             
             ]}
             wrapper="span"
             speed={50}

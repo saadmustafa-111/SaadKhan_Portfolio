@@ -1,5 +1,3 @@
-
-
 const PricingPlans = () => {
   return (
     <section className="py-12 mt-[100px]">
@@ -30,7 +28,9 @@ const PricingPlans = () => {
                     {plan.price}
                   </span>
                   {plan.price !== "Custom" && (
-                    <span className="text-xl font-medium text-gray-400">/mo</span>
+                    <span className="text-xl font-medium text-gray-400">
+                      /mo
+                    </span>
                   )}
                 </div>
 
@@ -55,29 +55,20 @@ const PricingPlans = () => {
                     </li>
                   ))}
                 </ul>
-              </div>    
+              </div>
               <a
                 href="#"
-                className="mt-auto block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                className="mt-8 p-4 block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
               >
                 {plan.buttonText}
               </a>
-
-
             </div>
           ))}
-
-
         </div>
       </div>
     </section>
   );
 };
-
-
-
-
-
 
 const plans = [
   {

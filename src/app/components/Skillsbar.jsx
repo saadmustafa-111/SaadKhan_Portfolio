@@ -1,16 +1,16 @@
 export default function Skillsbar() {
   const skills = [
     { name: "Html", percentage: 97, color: "#FF6464" },
-    { name: "Css", percentage: 95, color: "#9272D4" },
-    { name: "React", percentage: 85, color: "#5185D4" },
-    { name: "Tailwind CSS", percentage: 90, color: "#CA56F2" },
+    { name: "Css", percentage: 98, color: "#9272D4" },
+    { name: "React", percentage: 95, color: "#5185D4" },
+    { name: "Tailwind CSS", percentage: 94, color: "#CA56F2" },
     { name: "TypeScript", percentage: 92, color: "#0000CC" },
   ];
 
   return (
     <div
       id="skill"
-      className="h-[450px] mt-[150px] flex justify-center items-center bg-[#121212] dark:bg-gray-800 px-10"
+      className="h-[450px] mt-[150px]  flex justify-center items-center bg-[#121212] dark:bg-gray-800 px-10"
     >
       <div className="w-[800px] max-w-full text-center mx-auto">
         <h4 className="text-3xl md:text-5xl font-bold mb-10 text-white">
