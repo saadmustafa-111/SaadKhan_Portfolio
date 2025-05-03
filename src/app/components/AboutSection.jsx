@@ -8,7 +8,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/app/components/card";
+} from "@/app/components/Card";
 
 const TAB_DATA = [
   {
