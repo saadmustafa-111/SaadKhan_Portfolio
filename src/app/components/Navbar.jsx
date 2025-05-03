@@ -16,6 +16,10 @@ const navLinks = [
     path: "#projects",
   },
   {
+    title: "Experience",
+    path: "#experience",
+  },
+  {
     title: "Contact",
     path: "#contact",
   },
@@ -34,11 +38,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-        <div className="flex container text-[#ADB7BE] lg:py-4 flex-wrap items-center font-serif justify-between sm:text-xl mx-auto px-4 py-2">
-          <div>
-            Malahima
-            <span className="hidden sm:inline"> Amir</span>
+      <nav className="fixed mx-auto top-0 left-0 right-0 z-10 backdrop-blur-lg bg-black/30 border-b border-gray-700/50">
+        <div className="flex container text-[#ADB7BE] lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+          <div className="font-serif italic text-xl md:text-2xl font-semibold text-white">
+            Saad
+            <span className="hidden sm:inline"> Mustafa</span>
           </div>
 
           <div className="mobile-menu block md:hidden">
@@ -61,7 +65,7 @@ const Navbar = () => {
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
               {navLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} className="font-serif font-medium">
                   <NavLink
                     href={link.path}
                     title={link.title}

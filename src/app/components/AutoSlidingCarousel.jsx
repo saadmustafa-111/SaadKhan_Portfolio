@@ -1,151 +1,186 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
+import { Briefcase, Calendar, ChevronRight, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
-const AutoSlidingCarousel = () => {
-  const [index, setIndex] = useState(0);
+export default function ProfessionalExperience() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const slides = [
+  const experiences = [
     {
-      img: "/images/projects/1.jpg",
-      title: "Hair Majesty - Redefining Your Look with Elegance",
-      description: "Step into a world of flawless transformations...",
-      link: "https://nails-decoration.vercel.app/",
-    },
-    {
-      img: "/images/projects/2.jpg",
-      title: "Hinna Henna Creations - Art That Adorns Your Skin",
-      description: "Immerse yourself in the beauty of henna...",
-      link: "https://hinna-henna-main.vercel.app/",
-    },
-    {
-      img: "/images/projects/3.jpg",
-      title: "TeleCare Hair Studio - Where Family Haircare Meets Excellence",
-      description: "From kids to adults, enjoy personalized hair solutions...",
-      link: "https://salon-frontend-master.vercel.app/",
-    },
-    {
-      img: "/images/projects/4.jpg",
-      title: "Glow & Grace - Unleash Your Unique Beauty",
+      company: "Firnas Tech",
+      logo: "/images/firnas.jpg", // Your company logo
+      position: "MERN Stack Developer",
+      duration: "October 2024 - Present",
       description:
-        "Explore skincare secrets, makeup trends, and self-care rituals...",
-      link: "https://shofy-beauty-and-cosmetics-ecommerce-client-main.vercel.app/",
+        "Working on multiple hands-on projects utilizing React.js, Next.js, Nest.js, and MongoDB. Contributing to full-stack development with a focus on building scalable and responsive web applications.",
+      skills: [
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "MongoDB",
+        "Full-stack Development",
+      ],
+      isActive: true,
+      accentColor: "border-blue-500",
+      bgColor: "from-blue-500/20 to-blue-500/5",
+      iconColor: "text-blue-400",
+      lightColor: "bg-blue-500/10",
     },
     {
-      img: "/images/projects/5.jpg",
-      title: "DreamHome Realty - Your Key to the Perfect Property",
+      company: "CodeCrafters",
+      logo: "/images/codecrafters.png", // Your company logo
+      position: "Junior Front End Developer",
+      duration: "May 2024 - September 2024",
       description:
-        "Discover your dream home with a seamless property search, expert insights, and tailored real estate solutions.",
-      link: "https://real-estate-main-amber.vercel.app/",
-    },
-
-    {
-      img: "/images/projects/6.jpg",
-      title: "WanderScape - Your Gateway to Unforgettable Adventures",
-      description:
-        "Plan your perfect getaway with curated tours, themed travel experiences, and expert guides to explore the world your way.",
-      link: "https://travelwebsite-master.vercel.app/",
-    },
-    {
-      img: "/images/projects/7.jpg",
-      title: "Discover Africa - The Heartbeat of Adventure",
-      description:
-        "Embark on an extraordinary journey through Africa's rich landscapes, wildlife, and cultural wonders.",
-      link: "https://travelling-to-africs.vercel.app/",
-    },
-    {
-      img: "/images/projects/8.jpg",
-      title: "Elite Interiors - Elevate Your Living Space",
-      description:
-        "Find stunning furniture designs, modern aesthetics, and décor inspirations to transform your home into a masterpiece.",
-      link: "https://furniture-two-rho.vercel.app/",
-    },
-    {
-      img: "/images/projects/9.jpg",
-      title: "Neelum Valley Escape - Where Nature Meets Serenity",
-      description:
-        "Experience the breathtaking beauty of Swat and Neelum Valley with ultimate camping experiences and nature-inspired adventures.",
-      link: "https://travel-navy-sigma.vercel.app/",
-    },
-    {
-      img: "/images/projects/10.jpg",
-      title: "Pizza Bliss - Crafted for True Pizza Lovers",
-      description:
-        "From classic flavors to bold new creations, explore mouthwatering pizza recipes and pro tips for the perfect homemade slice.",
-      link: "https://food-theta-seven.vercel.app/",
+        "Worked on the Mary.io project, focusing on developing modern, responsive user interfaces. Applied React.js to create interactive components and implement state management solutions.",
+      skills: [
+        "React.js",
+        "Responsive Design",
+        "UI/UX",
+        "Front-end Development",
+      ],
+      isActive: false,
+      accentColor: "border-purple-500",
+      bgColor: "from-purple-500/20 to-purple-500/5",
+      iconColor: "text-purple-400",
+      lightColor: "bg-purple-500/10",
     },
   ];
 
-  // Auto slide effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Handle previous slide
-  const prevSlide = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Handle next slide
-  const nextSlide = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
-
   return (
-    <div className="dark:bg-gray-900 mt-[150px] text-gray-800 dark:text-white h-[550px] mb-16 flex items-center justify-center p-6">
-      <div className="max-w-4xl w-full relative">
-        {/* Title */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-white">Experience</h1>
-        </div>
-
-        {/* Carousel */}
-        <div className="overflow-hidden rounded-lg shadow-lg w-full relative">
-          {/* Slide */}
-          <div
-            className="w-full flex-shrink-0 text-white dark:bg-gray-800 p-6 transition-opacity duration-1000 ease-in-out"
-            style={{ opacity: 1 }}
-          >
-            <a
-              href={slides[index].link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={slides[index].img}
-                alt={slides[index].title}
-                className="w-full h-80 object-cover rounded-md cursor-pointer"
-              />
-            </a>
-            <h2 className="text-xl font-semibold mt-4">
-              {slides[index].title}
-            </h2>
-            <p className="text-white dark:text-gray-400">
-              {slides[index].description}
-            </p>
+    <div className="bg-gradient-to-b from-gray-900 to-gray-950 py-24 text-white mt-16">
+      {" "}
+      {/* Added mt-16 for top margin */}
+      <div className="max-w-6xl mx-auto px-4 pt-10">
+        {" "}
+        {/* Added pt-10 for additional padding at the top */}
+        {/* Section Title */}
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4">
+            <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium">
+              <Briefcase className="inline-block w-4 h-4 mr-2" />
+              Career Path
+            </span>
           </div>
+          <h1 className="text-5xl font-bold text-white mb-6">
+            Professional Experience
+          </h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            My professional journey in web development, showcasing my growth and
+            expertise.
+          </p>
         </div>
+        {/* Experience Cards - Both displayed side by side */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div
+                className={`bg-gradient-to-br ${experience.bgColor} backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border-t-4 ${experience.accentColor} transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] pt-8 group`}
+              >
+                {/* Company Logo - Fully visible and accommodating square images */}
+                <div className="flex justify-center mb-4">
+                  <div
+                    className={`h-24 w-24 rounded-lg bg-gray-800 border-2 border-gray-700 flex items-center justify-center overflow-hidden shadow-xl transition-transform duration-300 group-hover:scale-110`}
+                  >
+                    <div className="h-full w-full bg-white flex items-center justify-center p-2">
+                      <img
+                        src={experience.logo || "/placeholder.svg"}
+                        alt={`${experience.company} logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-        {/* Navigation Handles */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 transition"
-        >
-          ❮
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-70 transition"
-        >
-          ❯
-        </button>
+                {/* Company Info */}
+                <div className="p-8 pt-4">
+                  <div className="text-center mb-6">
+                    <h2 className="text-2xl font-bold text-white mb-2">
+                      {experience.company}
+                    </h2>
+                    <h3
+                      className={`text-xl font-semibold ${experience.iconColor}`}
+                    >
+                      {experience.position}
+                    </h3>
+                    <div className="flex items-center justify-center gap-3 mt-3">
+                      <span className="flex items-center text-gray-400">
+                        <Calendar className="w-4 h-4 mr-1 opacity-70" />
+                        {experience.duration}
+                      </span>
+                      {experience.isActive && (
+                        <span className="px-3 py-1 rounded-full text-sm bg-green-500/20 text-green-400 font-medium flex items-center">
+                          <span className="h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+                          Current
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Divider with gradient */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-6"></div>
+
+                  {/* Description */}
+                  <div className="bg-gray-800/40 p-5 rounded-lg mb-6 backdrop-blur-sm border border-gray-700/50">
+                    <p className="text-gray-300 leading-relaxed">
+                      {experience.description}
+                    </p>
+                  </div>
+
+                  {/* Skills */}
+                  <div>
+                    <h4 className="text-gray-400 mb-4 font-medium flex items-center">
+                      <ChevronRight className="w-4 h-4 mr-1" />
+                      Technologies:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {experience.skills.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className={`${experience.lightColor} px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom accent bar */}
+                <div className="h-1.5 w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+              </div>
+
+              {/* Decorative elements */}
+              {hoveredIndex === index && (
+                <>
+                  <div className="absolute -top-4 -right-4 h-16 w-16 bg-blue-500/10 rounded-full blur-xl z-0"></div>
+                  <div className="absolute -bottom-4 -left-4 h-16 w-16 bg-purple-500/10 rounded-full blur-xl z-0"></div>
+                </>
+              )}
+            </motion.div>
+          ))}
+        </div>
+        {/* View All Link */}
+        <div className="text-center mt-12">
+          <a
+            href="#"
+            className="inline-flex items-center px-5 py-2.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300 group"
+          >
+            View All Experience
+            <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </div>
   );
-};
-
-export default AutoSlidingCarousel;
+}

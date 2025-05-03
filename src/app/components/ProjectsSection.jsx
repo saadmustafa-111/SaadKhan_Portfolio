@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
@@ -7,40 +7,40 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Hair Majesty - Redefining Your Look with Elegance",
+    title: "S4 Security Surveillance System",
     description:
-      "Step into a world of flawless transformations with expert hairstyling, premium hair treatments, and trendsetting looks designed to elevate your confidence.",
-    image: "/images/projects/1.jpg",
+      "Advanced security monitoring solution with real-time surveillance capabilities, motion detection, and automated alerts for comprehensive protection.",
+    image: "/images/s4.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Nails-decoration-salon",
     previewUrl: "https://nails-decoration.vercel.app/",
   },
   {
     id: 2,
-    title: "Hinna Henna Creations - Art That Adorns Your Skin",
+    title: "Saudi Market Place Project",
     description:
-      "Immerse yourself in the beauty of henna with intricate designs, bridal mehndi, and artistic inspirations for every occasion.",
-    image: "/images/projects/2.jpg",
+      "Digital marketplace connecting Saudi vendors and customers with streamlined product listings, secure transactions, and localized shopping experience.",
+    image: "/images/saudi.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Henna-website",
     previewUrl: "https://hinna-henna-main.vercel.app/",
   },
   {
     id: 3,
-    title: "TeleCare Hair Studio - Where Family Haircare Meets Excellence",
+    title: "Food Delivery App",
     description:
-      "From kids to adults, enjoy personalized hair solutions, expert styling advice, and professional care for your entire family.",
-    image: "/images/projects/3.jpg",
+      "Seamless food ordering platform featuring restaurant exploration, real-time order tracking, and personalized meal recommendations.",
+    image: "/images/food.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Salon-website",
     previewUrl: "https://salon-frontend-master.vercel.app/",
   },
   {
     id: 4,
-    title: "Glow & Grace - Unleash Your Unique Beauty",
+    title: "4K Streaming App",
     description:
-      "Explore skincare secrets, makeup trends, and self-care rituals that help you embrace your individuality and radiate confidence.",
-    image: "/images/projects/4.jpg",
+      "High-definition content streaming service with extensive media library, personalized recommendations, and cross-device playback functionality.",
+    image: "/images/stream.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/malahimaamir/Cosmetics",
     previewUrl:
@@ -48,9 +48,9 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "DreamHome Realty - Your Key to the Perfect Property",
+    title: "Brand Centro",
     description:
-      "Discover your dream home with a seamless property search, expert insights, and tailored real estate solutions.",
+      "Brand management platform offering comprehensive tools for identity creation, campaign tracking, and analytics to strengthen market presence.",
     image: "/images/projects/5.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Real-estate",
@@ -58,19 +58,19 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "WanderScape - Your Gateway to Unforgettable Adventures",
+    title: "EHealth",
     description:
-      "Plan your perfect getaway with curated tours, themed travel experiences, and expert guides to explore the world your way",
-    image: "/images/projects/6.jpg",
+      "Telemedicine solution connecting patients with healthcare providers through secure video consultations, digital prescriptions, and health monitoring.",
+    image: "/images/ehealth.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/travelling-website",
     previewUrl: "https://travelwebsite-master.vercel.app/",
   },
   {
     id: 7,
-    title: "Discover Africa - The Heartbeat of Adventure",
+    title: "PharmaZone",
     description:
-      "Embark on an extraordinary journey through Africa's rich landscapes, wildlife, and cultural wonders.",
+      "Online pharmacy platform featuring medication ordering, prescription management, and health information resources for convenient healthcare access.",
     image: "/images/projects/7.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/travelling-to-africa",
@@ -78,30 +78,30 @@ const projectsData = [
   },
   {
     id: 8,
-    title: "Elite Interiors - Elevate Your Living Space",
+    title: "FYP Management System",
     description:
-      "Find stunning furniture designs, modern aesthetics, and décor inspirations to transform your home into a masterpiece.",
-    image: "/images/projects/8.jpg",
+      "Comprehensive solution for final year project coordination with milestone tracking, supervisor communication, and document management capabilities.",
+    image: "/images/fyp.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Furniture-Designs",
     previewUrl: "https://furniture-two-rho.vercel.app/",
   },
   {
     id: 9,
-    title: "Neelum Valley Escape - Where Nature Meets Serenity",
+    title: "Envintico",
     description:
-      "Experience the breathtaking beauty of Swat and Neelum Valley with ultimate camping experiences and nature-inspired adventures.",
-    image: "/images/projects/9.jpg",
+      "Environmental impact tracking platform helping businesses monitor carbon footprint, implement sustainability initiatives, and generate compliance reports.",
+    image: "/images/invoice.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/Travelling-Swat-to-Neelam",
     previewUrl: "https://travel-navy-sigma.vercel.app/",
   },
   {
     id: 10,
-    title: "Pizza Bliss - Crafted for True Pizza Lovers",
+    title: "Pak Lawyers Hub",
     description:
-      "From classic flavors to bold new creations, explore mouthwatering pizza recipes and pro tips for the perfect homemade slice.",
-    image: "/images/projects/10.jpg",
+      "Legal professional network connecting Pakistani lawyers with clients, featuring case management tools, document repositories, and consultation scheduling.",
+    image: "/images/lawyer.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/malahimaamir/food-ordering",
     previewUrl: "https://food-theta-seven.vercel.app/",
@@ -112,6 +112,21 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Handle responsive behavior
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
@@ -127,10 +142,14 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
-      <h2 className="text-center mt-[100px] text-4xl font-bold text-white  mb-8 md:mb-12">
+    <section
+      id="projects"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+    >
+      <h2 className="text-center text-4xl font-bold text-white mb-8 md:mb-12">
         My Projects
       </h2>
+
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
@@ -148,9 +167,10 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
+
       <ul
         ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 w-full"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
       >
         {filteredProjects.map((project, index) => (
           <motion.li
@@ -158,7 +178,8 @@ const ProjectsSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.3, delay: isMobile ? 0.1 : index * 0.2 }}
+            className="h-full"
           >
             <ProjectCard
               key={project.id}
@@ -171,6 +192,14 @@ const ProjectsSection = () => {
           </motion.li>
         ))}
       </ul>
+
+      {filteredProjects.length === 0 && (
+        <div className="w-full text-center py-16">
+          <p className="text-gray-400 text-lg">
+            No projects found with this filter.
+          </p>
+        </div>
+      )}
     </section>
   );
 };

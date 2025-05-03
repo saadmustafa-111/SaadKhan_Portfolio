@@ -4,11 +4,11 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Malahima Amir | Front-End Developer",
+  title: "Saad Mustafa | Front-End Developer",
   description:
     "Portfolio of Malahima Amir - a passionate Front-End developer specializing in modern web applications, UI/UX, and scalable backend systems.",
   openGraph: {
-    title: "Malahima Amir | Front-End Developer",
+    title: "Saad Mustafa | Front-End Developer",
     description:
       "Check out Malahima's portfolio featuring dynamic projects, skills, and achievements in Front-End development.",
     url: "https://malahima-amir.vercel.app",
