@@ -137,15 +137,22 @@ const EmailSection = () => {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Let's{" "}
+              Let&apos;s{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Connect
               </span>
             </h2>
 
-            <p className="text-gray-300 text-lg max-w-md leading-relaxed">
-              I'm currently looking for new opportunities. Whether you have a
-              question or just want to say hi, I'll try my best to get back to
+            <p className="text-gray-300 mb-4">
+              Let&apos;s{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                connect
+              </span>{" "}
+              and discuss how we can work together.
+            </p>
+            <p className="text-gray-300 mb-4">
+              I&apos;m currently looking for new opportunities. Whether you have a
+              question or just want to say hi, I&apos;ll try my best to get back to
               you!
             </p>
 

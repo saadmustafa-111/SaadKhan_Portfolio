@@ -86,8 +86,8 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I specialize in building responsive web applications using HTML,
             CSS, JavaScript, TypeScript, React.js, and Next.js. Over the years,
-            I've delivered high-quality solutions with great user experiences
-            across all devices. I've also worked on several MERN stack projects
+            I&apos;ve delivered high-quality solutions with great user experiences
+            across all devices. I&apos;ve also worked on several MERN stack projects
             using Node.js, Express, Nest.js, and MongoDB, giving me a solid
             grasp of both frontend and backend development. Collaborating with
             cross-functional teams has helped me develop the skills to tackle

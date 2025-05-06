@@ -8,9 +8,6 @@ const HeroSection = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    // Set body background color directly with JavaScript
-    document.body.style.backgroundColor = "#0f172a"; // Changed to a darker blue
-
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
@@ -44,7 +41,7 @@ const HeroSection = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(139, 92, 246, 0.6)"; // Changed particle color to purple
+        ctx.fillStyle = "rgba(139, 92, 246, 0.6)";
         ctx.fill();
       }
     }
@@ -68,7 +65,7 @@ const HeroSection = () => {
             particles[a].y - particles[b].y
           );
           if (dist < 120) {
-            ctx.strokeStyle = `rgba(139, 92, 246, ${1 - dist / 120})`; // Changed connection color to match particles
+            ctx.strokeStyle = `rgba(139, 92, 246, ${1 - dist / 120})`;
             ctx.lineWidth = 0.7;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -93,13 +90,11 @@ const HeroSection = () => {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      // Reset body background color on component unmount (if needed)
-      // document.body.style.backgroundColor = "";
     };
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-black transition-colors duration-300">
       {/* Font imports */}
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Lobster&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -114,7 +109,7 @@ const HeroSection = () => {
       <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-fuchsia-500/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-amber-500/20 to-rose-500/20 rounded-full blur-3xl"></div>
 
-      <div className="relative z-10 text-center text-white p-5 max-w-4xl">
+      <div className="relative z-10 text-center p-5 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,12 +119,11 @@ const HeroSection = () => {
             <span className="block text-sm font-medium tracking-widest uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-fuchsia-400 animate-pulse">
               Welcome to my portfolio
             </span>
-            {/* Updated name display with new font family */}
             <span className="relative text-5xl sm:text-6xl lg:text-8xl font-black tracking-tighter leading-none">
               <span
                 className="inline-block text-transparent bg-clip-text"
                 style={{
-                  fontFamily: "Pacifico, cursive", // Changed to Pacifico font
+                  fontFamily: "Pacifico, cursive",
                   backgroundImage:
                     "linear-gradient(to bottom right, #fcd34d, #e879f9, #f472b6)",
                   backgroundSize: "200% auto",
@@ -148,7 +142,6 @@ const HeroSection = () => {
             <div className="absolute -left-4 -bottom-4 w-8 h-8 border-b-2 border-l-2 border-rose-400 opacity-70"></div>
             <div className="absolute -right-4 -bottom-4 w-8 h-8 border-b-2 border-r-2 border-pink-400 opacity-70"></div>
 
-            {/* Fixed designation text with new color scheme */}
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold tracking-tight py-4 px-6">
               <TypeAnimation
                 sequence={[
@@ -194,7 +187,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-600 hover:from-fuchsia-600 hover:to-purple-700 text-white mt-3 sm:mt-0 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-fuchsia-500/25"
             >
-              <span className="block bg-slate-900 hover:bg-slate-800 rounded-full px-7 py-2.5 font-bold tracking-wide">
+              <span className="block bg-white dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full px-7 py-2.5 font-bold tracking-wide text-black dark:text-white transition-colors duration-300">
                 Download CV
               </span>
             </Link>
@@ -214,27 +207,6 @@ const HeroSection = () => {
           100% {
             background-position: 0% 50%;
           }
-        }
-
-        /* Ensure the body and html have full height */
-        html,
-        body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          background-color: #0f172a !important;
-        }
-
-        /* Apply background to body */
-        body {
-          min-height: 100vh;
-        }
-
-        /* This is important to override Next.js default styles */
-        #__next {
-          background-color: #0f172a;
-          min-height: 100vh;
         }
       `}</style>
     </section>

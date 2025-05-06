@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
 
 const ProjectCard = ({ title, description, imgUrl, gitUrl, previewUrl }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,18 +27,25 @@ const ProjectCard = ({ title, description, imgUrl, gitUrl, previewUrl }) => {
             <span className="text-gray-400">Image not available</span>
           </div>
         ) : (
-          <img
-            src={imgUrl}
-            alt={title}
-            className={`w-full h-full object-cover transition-all duration-300 ${
-              isHovered ? "scale-110" : "scale-100"
-            } ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
-            onLoad={() => setIsImageLoaded(true)}
-            onError={() => {
-              setImageError(true);
-              setIsImageLoaded(true);
-            }}
-          />
+          <div className={`relative w-full h-full ${isImageLoaded ? "opacity-100" : "opacity-0"}`}>
+            <Image
+              src={imgUrl}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className={`object-cover transition-all duration-300 ${
+                isHovered ? "scale-110" : "scale-100"
+              }`}
+              onLoad={() => setIsImageLoaded(true)}
+              onError={() => {
+                setImageError(true);
+                setIsImageLoaded(true);
+              }}
+              priority={false}
+              quality={75}
+              unoptimized={false}
+            />
+          </div>
         )}
 
         <div

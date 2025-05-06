@@ -49,7 +49,7 @@ export default function ProfessionalExperience() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-950 py-24 text-white mt-16">
+    <div id="experience" className="bg-gradient-to-b from-gray-900 to-gray-950 py-24 text-white mt-16">
       {" "}
       {/* Added mt-16 for top margin */}
       <div className="max-w-6xl mx-auto px-4 pt-10">

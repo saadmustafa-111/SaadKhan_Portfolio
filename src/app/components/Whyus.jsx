@@ -1,3 +1,6 @@
+"use client";
+import Image from "next/image";
+
 export default function WhyUs() {
   return (
     <section className="py-16 mt-[100px]">
@@ -19,9 +22,11 @@ export default function WhyUs() {
               <div className="relative bg-black border border-gray-800 rounded-xl p-8 transition-all duration-500 group-hover:translate-y-[-8px] group-hover:shadow-xl h-full">
                 <div className="flex justify-center mb-6">
                   <div className="p-3 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-gray-700">
-                    <img
+                    <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
+                      width={64}
+                      height={64}
                       className="w-16 h-16 object-contain"
                     />
                   </div>

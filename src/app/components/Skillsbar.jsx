@@ -23,7 +23,7 @@ export default function CircularSkillsChart() {
   const radius = 180;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 py-12">
+    <div id="skills" className="flex flex-col items-center justify-center min-h-screen bg-gray-900 py-12 mt-16">
       <div className="w-full max-w-4xl px-6">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white text-center">
           Technical Skills

@@ -3,8 +3,31 @@
 @tailwind utilities;
 
 :root {
+  --foreground-rgb: 51, 45, 45;
+  --background-rgb: 250, 247, 245;
+  --navbar-bg: rgba(250, 247, 245, 0.3);
+  --navbar-border: rgba(51, 45, 45, 0.1);
+  --text-primary: rgb(51, 45, 45);
+  --text-secondary: rgb(107, 114, 128);
+  --card-bg: rgb(255, 251, 247);
+  --card-border: rgb(229, 231, 235);
+  --section-bg: rgb(250, 247, 245);
+}
+
+.dark {
   --foreground-rgb: 255, 255, 255;
-  --background-rgb: 10, 10, 26; /* #0a0a1a in RGB */
+  --background-rgb: 0, 0, 0;
+  --navbar-bg: rgba(0, 0, 0, 0.3);
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(173, 183, 190);
+  --card-bg: rgb(17, 24, 39);
+  --card-border: rgb(55, 65, 81);
+  --section-bg: rgb(17, 24, 39);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
@@ -16,12 +39,63 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* Base styles for common elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
 }
 
+p, span, a {
+  color: var(--text-secondary);
+}
+
+/* Main content background */
+main {
+  background-color: rgb(var(--background-rgb));
+}
+
+/* Card and section backgrounds */
+section, .card, .bg-gray-800, .bg-slate-800 {
+  background-color: var(--section-bg) !important;
+}
+
+/* Text colors for different elements */
+.text-white {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-300, .text-gray-400, .text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+/* Button styles */
+button {
+  color: var(--text-primary);
+  border-color: var(--card-border);
+}
+
+/* Input styles */
+input, textarea {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--card-border);
+}
+
+/* Card styles */
+.card, .bg-gray-800, .bg-slate-800 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Section specific styles */
+section {
+  color: var(--text-primary);
+}
+
+section p, section span {
+  color: var(--text-secondary);
+}
+
+/* Rest of your existing animations */
 @keyframes slide {
   0%,
   20% {
