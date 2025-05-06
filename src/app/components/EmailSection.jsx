@@ -121,36 +121,36 @@ const EmailSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
+    <section id="contact" className="relative py-24 overflow-hidden bg-white dark:bg-black">
       {/* Background elements */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-1/3 right-0 w-72 h-72 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob"></div>
+      <div className="absolute top-1/3 right-0 w-72 h-72 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 dark:opacity-20 animate-blob animation-delay-4000"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-block px-3 py-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full backdrop-blur-sm border border-purple-500/20">
-              <span className="text-sm font-medium text-purple-200">
+              <span className="text-sm font-medium text-purple-600 dark:text-purple-200">
                 Open to opportunities
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Let&apos;s{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Connect
               </span>
             </h2>
 
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               Let&apos;s{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                 connect
               </span>{" "}
               and discuss how we can work together.
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               I&apos;m currently looking for new opportunities. Whether you have a
               question or just want to say hi, I&apos;ll try my best to get back to
               you!
@@ -160,23 +160,23 @@ const EmailSection = () => {
               <Link
                 href="https://github.com/saadmustafa-111"
                 target="_blank"
-                className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-700 hover:scale-110 border border-gray-700 group"
+                className="w-12 h-12 bg-[rgb(250,247,245)] dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110 border border-gray-200 dark:border-gray-700 group"
               >
-                <Github className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                <Github className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white" />
               </Link>
 
               <Link
                 href="https://www.linkedin.com/in/saad-mustafa-31604822b/"
                 target="_blank"
-                className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-blue-700 hover:scale-110 border border-gray-700 group"
+                className="w-12 h-12 bg-[rgb(250,247,245)] dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 dark:hover:bg-blue-700 hover:scale-110 border border-gray-200 dark:border-gray-700 group"
               >
-                <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white" />
               </Link>
             </div>
           </div>
 
-          <div className="bg-gray-900/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 shadow-xl">
-            <h3 className="text-xl font-semibold text-white mb-6">
+          <div className="bg-[rgb(250,247,245)] dark:bg-gray-900/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
               Send me a message
             </h3>
 
@@ -189,11 +189,11 @@ const EmailSection = () => {
                 <input
                   type="email"
                   id="email"
-                  className={`peer w-full bg-gray-800/50 border ${
+                  className={`peer w-full bg-white dark:bg-gray-800/50 border ${
                     formState.isFocused.email
                       ? "border-purple-500"
-                      : "border-gray-700"
-                  } rounded-lg px-4 pt-5 pb-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300`}
+                      : "border-gray-200 dark:border-gray-700"
+                  } rounded-lg px-4 pt-5 pb-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300`}
                   placeholder=" "
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -204,8 +204,8 @@ const EmailSection = () => {
                   htmlFor="email"
                   className={`absolute text-sm ${
                     formState.isFocused.email || email
-                      ? "text-xs top-2 text-purple-400"
-                      : "top-4 text-gray-400"
+                      ? "text-xs top-2 text-purple-600 dark:text-purple-400"
+                      : "top-4 text-gray-500 dark:text-gray-400"
                   } left-4 transition-all duration-300 pointer-events-none`}
                 >
                   Your Email
@@ -216,11 +216,11 @@ const EmailSection = () => {
                 <input
                   type="text"
                   id="subject"
-                  className={`peer w-full bg-gray-800/50 border ${
+                  className={`peer w-full bg-white dark:bg-gray-800/50 border ${
                     formState.isFocused.subject
                       ? "border-purple-500"
-                      : "border-gray-700"
-                  } rounded-lg px-4 pt-5 pb-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300`}
+                      : "border-gray-200 dark:border-gray-700"
+                  } rounded-lg px-4 pt-5 pb-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300`}
                   placeholder=" "
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
@@ -231,8 +231,8 @@ const EmailSection = () => {
                   htmlFor="subject"
                   className={`absolute text-sm ${
                     formState.isFocused.subject || subject
-                      ? "text-xs top-2 text-purple-400"
-                      : "top-4 text-gray-400"
+                      ? "text-xs top-2 text-purple-600 dark:text-purple-400"
+                      : "top-4 text-gray-500 dark:text-gray-400"
                   } left-4 transition-all duration-300 pointer-events-none`}
                 >
                   Subject
@@ -243,11 +243,11 @@ const EmailSection = () => {
                 <textarea
                   id="message"
                   rows={4}
-                  className={`peer w-full bg-gray-800/50 border ${
+                  className={`peer w-full bg-white dark:bg-gray-800/50 border ${
                     formState.isFocused.message
                       ? "border-purple-500"
-                      : "border-gray-700"
-                  } rounded-lg px-4 pt-5 pb-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300 resize-none`}
+                      : "border-gray-200 dark:border-gray-700"
+                  } rounded-lg px-4 pt-5 pb-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300 resize-none`}
                   placeholder=" "
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -258,76 +258,45 @@ const EmailSection = () => {
                   htmlFor="message"
                   className={`absolute text-sm ${
                     formState.isFocused.message || message
-                      ? "text-xs top-2 text-purple-400"
-                      : "top-4 text-gray-400"
+                      ? "text-xs top-2 text-purple-600 dark:text-purple-400"
+                      : "top-4 text-gray-500 dark:text-gray-400"
                   } left-4 transition-all duration-300 pointer-events-none`}
                 >
-                  Your Message
+                  Message
                 </label>
               </div>
-
-              {/* Status messages */}
-              {formState.isError && (
-                <div className="flex items-center gap-2 text-red-400 text-sm">
-                  <AlertCircle className="w-4 h-4" />
-                  <span>{formState.errorMessage}</span>
-                </div>
-              )}
-
-              {formState.isSuccess && (
-                <div className="flex items-center gap-2 text-green-400 text-sm">
-                  <Check className="w-4 h-4" />
-                  <span>Message sent successfully!</span>
-                </div>
-              )}
 
               <button
                 type="submit"
                 disabled={formState.isSubmitting}
-                onMouseEnter={() =>
-                  setFormState((prev) => ({ ...prev, isHovered: true }))
-                }
-                onMouseLeave={() =>
-                  setFormState((prev) => ({ ...prev, isHovered: false }))
-                }
-                className="group relative w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-3 px-6 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 disabled:opacity-70"
+                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <div className="absolute inset-0 w-full h-full transition-all duration-300 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative flex items-center justify-center gap-2">
-                  {formState.isSubmitting ? (
-                    <>
-                      <span>Sending...</span>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <div
-                        className={`transition-all duration-300 ${
-                          formState.isHovered ? "translate-x-1" : ""
-                        }`}
-                      >
-                        {formState.isHovered ? (
-                          <ArrowRight className="w-5 h-5" />
-                        ) : (
-                          <Send className="w-5 h-5" />
-                        )}
-                      </div>
-                    </>
-                  )}
-                </div>
+                {formState.isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4" />
+                  </>
+                )}
               </button>
 
-              {/* Fallback option */}
-              <div className="text-center">
-                <button
-                  type="button"
-                  onClick={openMailClient}
-                  className="text-gray-400 text-xs hover:text-purple-400 transition-colors"
-                >
-                  Having trouble? Open in email client instead
-                </button>
-              </div>
+              {formState.isError && (
+                <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5" />
+                  {formState.errorMessage}
+                </div>
+              )}
+
+              {formState.isSuccess && (
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-600 dark:text-green-400 px-4 py-3 rounded-lg flex items-center gap-2">
+                  <Check className="w-5 h-5" />
+                  Message sent successfully!
+                </div>
+              )}
             </form>
           </div>
         </div>

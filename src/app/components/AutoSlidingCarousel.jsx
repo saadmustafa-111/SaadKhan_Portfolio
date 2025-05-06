@@ -56,24 +56,24 @@ export default function ProfessionalExperience() {
         {" "}
         {/* Added pt-10 for additional padding at the top */}
         {/* Section Title */}
-        <div className="text-center mb-20">
-          <div className="inline-block mb-4">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="inline-block mb-3 sm:mb-4">
             <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm font-medium">
               <Briefcase className="inline-block w-4 h-4 mr-2" />
               Career Path
             </span>
           </div>
-          <h1 className="text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Professional Experience
           </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <div className="h-1 w-20 sm:w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-4">
             My professional journey in web development, showcasing my growth and
             expertise.
           </p>
         </div>
         {/* Experience Cards - Both displayed side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6">
           {experiences.map((experience, index) => (
             <motion.div
               key={index}
@@ -85,12 +85,12 @@ export default function ProfessionalExperience() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
-                className={`bg-gradient-to-br ${experience.bgColor} backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border-t-4 ${experience.accentColor} transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] pt-8 group`}
+                className={`bg-gradient-to-br ${experience.bgColor} backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden border-t-4 ${experience.accentColor} transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] pt-6 sm:pt-8 group`}
               >
-                {/* Company Logo - Fully visible and accommodating square images */}
+                {/* Company Logo */}
                 <div className="flex justify-center mb-4">
                   <div
-                    className={`h-24 w-24 rounded-lg bg-gray-800 border-2 border-gray-700 flex items-center justify-center overflow-hidden shadow-xl transition-transform duration-300 group-hover:scale-110`}
+                    className={`h-20 w-20 sm:h-24 sm:w-24 rounded-lg bg-gray-800 border-2 border-gray-700 flex items-center justify-center overflow-hidden shadow-xl transition-transform duration-300 group-hover:scale-110`}
                   >
                     <div className="h-full w-full bg-white flex items-center justify-center p-2">
                       <img
@@ -103,23 +103,23 @@ export default function ProfessionalExperience() {
                 </div>
 
                 {/* Company Info */}
-                <div className="p-8 pt-4">
-                  <div className="text-center mb-6">
-                    <h2 className="text-2xl font-bold text-white mb-2">
+                <div className="p-4 sm:p-6 md:p-8 pt-2 sm:pt-4">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
                       {experience.company}
                     </h2>
                     <h3
-                      className={`text-xl font-semibold ${experience.iconColor}`}
+                      className={`text-lg sm:text-xl font-semibold ${experience.iconColor}`}
                     >
                       {experience.position}
                     </h3>
-                    <div className="flex items-center justify-center gap-3 mt-3">
-                      <span className="flex items-center text-gray-400">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 mt-2 sm:mt-3">
+                      <span className="flex items-center text-gray-400 text-sm sm:text-base">
                         <Calendar className="w-4 h-4 mr-1 opacity-70" />
                         {experience.duration}
                       </span>
                       {experience.isActive && (
-                        <span className="px-3 py-1 rounded-full text-sm bg-green-500/20 text-green-400 font-medium flex items-center">
+                        <span className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm bg-green-500/20 text-green-400 font-medium flex items-center">
                           <span className="h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
                           Current
                         </span>
@@ -128,18 +128,18 @@ export default function ProfessionalExperience() {
                   </div>
 
                   {/* Divider with gradient */}
-                  <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-6"></div>
+                  <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-4 sm:my-6"></div>
 
                   {/* Description */}
-                  <div className="bg-gray-800/40 p-5 rounded-lg mb-6 backdrop-blur-sm border border-gray-700/50">
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className="bg-gray-800/40 p-4 sm:p-5 rounded-lg mb-4 sm:mb-6 backdrop-blur-sm border border-gray-700/50">
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                       {experience.description}
                     </p>
                   </div>
 
                   {/* Skills */}
                   <div>
-                    <h4 className="text-gray-400 mb-4 font-medium flex items-center">
+                    <h4 className="text-gray-400 mb-3 sm:mb-4 font-medium flex items-center text-sm sm:text-base">
                       <ChevronRight className="w-4 h-4 mr-1" />
                       Technologies:
                     </h4>
@@ -147,7 +147,7 @@ export default function ProfessionalExperience() {
                       {experience.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className={`${experience.lightColor} px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md`}
+                          className={`${experience.lightColor} px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md`}
                         >
                           {skill}
                         </span>
@@ -171,10 +171,10 @@ export default function ProfessionalExperience() {
           ))}
         </div>
         {/* View All Link */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <a
             href="#"
-            className="inline-flex items-center px-5 py-2.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300 group"
+            className="inline-flex items-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300 group text-sm sm:text-base"
           >
             View All Experience
             <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

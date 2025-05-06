@@ -4,14 +4,17 @@
 
 :root {
   --foreground-rgb: 51, 45, 45;
-  --background-rgb: 250, 247, 245;
-  --navbar-bg: rgba(250, 247, 245, 0.3);
+  --background-rgb: 255, 255, 255;
+  --navbar-bg: rgba(255, 255, 255, 0.3);
   --navbar-border: rgba(51, 45, 45, 0.1);
   --text-primary: rgb(51, 45, 45);
   --text-secondary: rgb(107, 114, 128);
-  --card-bg: rgb(255, 251, 247);
+  --card-bg: rgb(250, 247, 245);
   --card-border: rgb(229, 231, 235);
-  --section-bg: rgb(250, 247, 245);
+  --section-bg: rgb(255, 255, 255);
+  --card-hover: rgb(245, 242, 240);
+  --input-bg: rgb(250, 247, 245);
+  --input-border: rgb(229, 231, 235);
 }
 
 .dark {
@@ -23,20 +26,27 @@
   --text-secondary: rgb(173, 183, 190);
   --card-bg: rgb(17, 24, 39);
   --card-border: rgb(55, 65, 81);
-  --section-bg: rgb(17, 24, 39);
+  --section-bg: rgb(0, 0, 0);
+  --card-hover: rgb(31, 41, 55);
+  --input-bg: rgb(17, 24, 39);
+  --input-border: rgb(55, 65, 81);
 }
 
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 /* Base styles for common elements */
@@ -51,6 +61,7 @@ p, span, a {
 /* Main content background */
 main {
   background-color: rgb(var(--background-rgb));
+  min-height: 100vh;
 }
 
 /* Card and section backgrounds */
@@ -75,15 +86,19 @@ button {
 
 /* Input styles */
 input, textarea {
-  background-color: var(--card-bg);
+  background-color: var(--input-bg);
   color: var(--text-primary);
-  border-color: var(--card-border);
+  border-color: var(--input-border);
 }
 
 /* Card styles */
 .card, .bg-gray-800, .bg-slate-800 {
   background-color: var(--card-bg) !important;
   border-color: var(--card-border) !important;
+}
+
+.card:hover, .bg-gray-800:hover, .bg-slate-800:hover {
+  background-color: var(--card-hover) !important;
 }
 
 /* Section specific styles */

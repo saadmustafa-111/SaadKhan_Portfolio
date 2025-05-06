@@ -57,9 +57,8 @@ const Navbar = () => {
     <>
       <nav className="fixed mx-auto top-0 left-0 right-0 z-10 backdrop-blur-lg bg-white/30 dark:bg-black/30 border-b border-gray-200/50 dark:border-gray-700/50">
         <div className="flex container text-gray-600 dark:text-[#ADB7BE] lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-          <div className="font-serif italic text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
-            Saad
-            <span className="hidden sm:inline"> Mustafa</span>
+          <div className="font-serif italic text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
+            Saad Mustafa
           </div>
 
           <div className="menu hidden md:block md:w-auto" id="navbar">

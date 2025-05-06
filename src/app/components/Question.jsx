@@ -10,13 +10,13 @@ function cn(...classes) {
 
 export default function FAQSection() {
   return (
-    <section className="py-16 mt-[100px]">
+    <section className="py-16 mt-[100px] bg-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-xl text-gray-400">
+          <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400">
             Find answers to common questions about our services and expertise
           </p>
         </div>
@@ -28,10 +28,10 @@ export default function FAQSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-400 mb-6">Still have questions?</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">Still have questions?</p>
           <a
             href="#contact"
-            className="inline-flex items-center px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+            className="inline-flex items-center px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
           >
             Contact Us
           </a>
@@ -45,15 +45,15 @@ function FAQItem({ question, answer }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-800 rounded-lg overflow-hidden bg-black/50 backdrop-blur-sm">
+    <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden bg-[rgb(250,247,245)] dark:bg-black/50 backdrop-blur-sm">
       <button
         className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-lg font-medium text-white">{question}</h3>
+        <h3 className="text-lg font-medium text-gray-900 dark:text-white">{question}</h3>
         <ChevronDown
           className={cn(
-            "h-5 w-5 text-gray-400 transition-transform duration-300",
+            "h-5 w-5 text-gray-600 dark:text-gray-400 transition-transform duration-300",
             isOpen && "transform rotate-180"
           )}
         />
@@ -64,7 +64,7 @@ function FAQItem({ question, answer }) {
           isOpen && "max-h-96"
         )}
       >
-        <div className="px-6 pb-4 pt-0 text-gray-400 border-t border-gray-800">
+        <div className="px-6 pb-4 pt-0 text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
           <p className="py-4">{answer}</p>
         </div>
       </div>
