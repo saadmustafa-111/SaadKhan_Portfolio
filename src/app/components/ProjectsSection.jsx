@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
@@ -7,104 +7,102 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "S4 Security Surveillance System",
+    title: "Gigjives",
     description:
-      "Advanced security monitoring solution with real-time surveillance capabilities, motion detection, and automated alerts for comprehensive protection.",
-    image: "/images/s4.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Nails-decoration-salon",
-    previewUrl: "https://nails-decoration.vercel.app/",
+      "Project management software for IT and construction companies with full Admin, Manager, and Employee role modules. Features real-time communication with Socket.IO and WebRTC-based video calling system for seamless collaboration.",
+    image: "/images/gigjives.png",
+    tag: ["All", "Web", "Full-Stack"],
+    technologies: ["React.js", "Node.js", "Socket.IO", "WebRTC"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 2,
-    title: "Saudi Market Place Project",
+    title: "Lemara Commercial",
     description:
-      "Digital marketplace connecting Saudi vendors and customers with streamlined product listings, secure transactions, and localized shopping experience.",
-    image: "/images/saudi.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Henna-website",
-    previewUrl: "https://hinna-henna-main.vercel.app/",
+      "Real estate platform built with Next.js to streamline workflows. Features dynamic property listings, automated lead generation, and efficient agent-client management tools through a centralized, responsive interface.",
+    image: "/images/lemara.png",
+    tag: ["All", "Web", "Full-Stack"],
+    technologies: ["Next.js", "React.js", "Tailwind CSS"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 3,
-    title: "Food Delivery App",
+    title: "S4 Security Management App",
     description:
-      "Seamless food ordering platform featuring restaurant exploration, real-time order tracking, and personalized meal recommendations.",
-    image: "/images/food.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Salon-website",
-    previewUrl: "https://salon-frontend-master.vercel.app/",
+      "Security personnel management system with React.js frontend and NestJS backend with MongoDB. Streamlines hiring processes and enhances operational efficiency for security companies.",
+    image: "/images/s4-security.png",
+    tag: ["All", "Web", "Full-Stack"],
+    technologies: ["React.js", "NestJS", "MongoDB"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 4,
-    title: "4K Streaming App",
+    title: "4 Rays Gaming Centers",
     description:
-      "High-definition content streaming service with extensive media library, personalized recommendations, and cross-device playback functionality.",
-    image: "/images/stream.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/malahimaamir/Cosmetics",
-    previewUrl:
-      "https://shofy-beauty-and-cosmetics-ecommerce-client-main.vercel.app/",
+      "American SaaS product for gaming centers and subscription management. Led entire frontend development and collaborated on AI features including face detection and face recognition systems.",
+    image: "/images/4rays.png",
+    tag: ["All", "Web", "AI"],
+    technologies: ["React.js", "AI/ML", "Face Recognition"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 5,
-    title: "Brand Centro",
+    title: "BrandCentro Dubai",
     description:
-      "Brand management platform offering comprehensive tools for identity creation, campaign tracking, and analytics to strengthen market presence.",
-    image: "/images/projects/5.jpg",
+      "Comprehensive overview platform for apartment buildings in Dubai, displaying floors, apartments per floor, and detailed property insights. Features dynamic PDF templates using React PDF/Rerender.",
+    image: "/images/brandcentro.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Real-estate",
-    previewUrl: "https://real-estate-main-amber.vercel.app/",
+    technologies: ["React.js", "React PDF", "PDF Generation"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 6,
-    title: "EHealth",
+    title: "EHealth Platform",
     description:
-      "Telemedicine solution connecting patients with healthcare providers through secure video consultations, digital prescriptions, and health monitoring.",
+      "Responsive website and mobile app for doctor search, profile viewing, appointment booking, and prescription management. Enables seamless doctor-patient interaction with ratings and feedback system.",
     image: "/images/ehealth.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/travelling-website",
-    previewUrl: "https://travelwebsite-master.vercel.app/",
+    tag: ["All", "Web", "Mobile"],
+    technologies: ["React.js", "React Native", "Healthcare"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 7,
     title: "PharmaZone",
     description:
-      "Online pharmacy platform featuring medication ordering, prescription management, and health information resources for convenient healthcare access.",
-    image: "/images/projects/7.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/travelling-to-africa",
-    previewUrl: "https://travelling-to-africs.vercel.app/",
+      "React Native mobile app and React.js web app connecting customers with nearby pharmacies. Features location-based search, medicine availability checking, order placement, and real-time chat.",
+    image: "/images/pharmazone.png",
+    tag: ["All", "Web", "Mobile"],
+    technologies: ["React.js", "React Native", "Real-time Chat"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 8,
     title: "FYP Management System",
     description:
-      "Comprehensive solution for final year project coordination with milestone tracking, supervisor communication, and document management capabilities.",
-    image: "/images/fyp.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Furniture-Designs",
-    previewUrl: "https://furniture-two-rho.vercel.app/",
+      "Built for AUST to streamline project submission, evaluation, and tracking. Developed RESTful APIs with Node.js and integrated them into a responsive React frontend to enhance workflow and communication.",
+    image: "/images/fyp-system.png",
+    tag: ["All", "Web", "Full-Stack"],
+    technologies: ["React.js", "Node.js", "RESTful APIs"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 9,
-    title: "Envintico",
+    title: "Habba Wa Jumla",
     description:
-      "Environmental impact tracking platform helping businesses monitor carbon footprint, implement sustainability initiatives, and generate compliance reports.",
-    image: "/images/invoice.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/Travelling-Swat-to-Neelam",
-    previewUrl: "https://travel-navy-sigma.vercel.app/",
-  },
-  {
-    id: 10,
-    title: "Pak Lawyers Hub",
-    description:
-      "Legal professional network connecting Pakistani lawyers with clients, featuring case management tools, document repositories, and consultation scheduling.",
-    image: "/images/lawyer.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/malahimaamir/food-ordering",
-    previewUrl: "https://food-theta-seven.vercel.app/",
+      "Saudi Online Marketplace project focusing on user interface development. Collaborated closely with the design team to ensure a seamless user experience for the e-commerce platform.",
+    image: "/images/habba-jumla.png",
+    tag: ["All", "Web", "E-commerce"],
+    technologies: ["React.js", "UI/UX", "E-commerce"],
+    gitUrl: "#",
+    previewUrl: "#",
   },
 ];
 
@@ -144,62 +142,118 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
     >
-      <h2 className="text-center text-4xl font-bold text-white mb-8 md:mb-12">
-        My Projects
-      </h2>
-
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
+      <div className="text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent mb-4"
+        >
+          Featured Projects
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-gray-300 text-lg max-w-2xl mx-auto"
+        >
+          Showcasing my expertise in full-stack development, from enterprise
+          solutions to innovative AI-powered applications
+        </motion.p>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="flex flex-wrap justify-center items-center gap-3 mb-12"
+      >
+        {["All", "Web", "Mobile", "Full-Stack", "AI", "E-commerce"].map(
+          (filterTag) => (
+            <ProjectTag
+              key={filterTag}
+              onClick={handleTagChange}
+              name={filterTag}
+              isSelected={tag === filterTag}
+            />
+          )
+        )}
+      </motion.div>
 
       <ul
         ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 w-full"
       >
         {filteredProjects.map((project, index) => (
           <motion.li
-            key={index}
+            key={project.id}
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: isMobile ? 0.1 : index * 0.2 }}
-            className="h-full"
+            transition={{ duration: 0.5, delay: isMobile ? 0.1 : index * 0.15 }}
+            className="h-full group"
           >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
+            <div className="relative h-full">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur"></div>
+              <div className="relative h-full">
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imgUrl={project.image}
+                  gitUrl={project.gitUrl}
+                  previewUrl={project.previewUrl}
+                  technologies={project.technologies}
+                />
+              </div>
+            </div>
           </motion.li>
         ))}
       </ul>
 
       {filteredProjects.length === 0 && (
-        <div className="w-full text-center py-16">
-          <p className="text-gray-400 text-lg">
-            No projects found with this filter.
-          </p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full text-center py-20"
+        >
+          <div className="bg-slate-800/50 rounded-2xl p-12 border border-slate-700">
+            <div className="text-6xl mb-4">🔍</div>
+            <p className="text-gray-300 text-xl mb-2">No projects found</p>
+            <p className="text-gray-500">
+              Try selecting a different filter to explore more projects
+            </p>
+          </div>
+        </motion.div>
       )}
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+      >
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-blue-400 mb-2">
+            {projectsData.length}+
+          </div>
+          <div className="text-gray-300 text-sm">Projects Completed</div>
+        </div>
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-purple-400 mb-2">2+</div>
+          <div className="text-gray-300 text-sm">Years Experience</div>
+        </div>
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-cyan-400 mb-2">10+</div>
+          <div className="text-gray-300 text-sm">Technologies</div>
+        </div>
+        <div className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700">
+          <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
+          <div className="text-gray-300 text-sm">Client Satisfaction</div>
+        </div>
+      </motion.div>
     </section>
   );
 };

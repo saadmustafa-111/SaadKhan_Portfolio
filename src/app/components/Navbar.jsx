@@ -32,21 +32,24 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     // Check for saved theme preference or use system preference
-    const savedTheme = localStorage.getItem('theme') || 
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const savedTheme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
     setTheme(savedTheme);
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
   const handleNavClick = () => {
@@ -77,7 +80,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-4">
             {/* Theme Toggle Button */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle theme"
@@ -87,7 +90,7 @@ const Navbar = () => {
               ) : (
                 <MoonIcon className="h-5 w-5 text-gray-700" />
               )}
-            </button>
+            </button> */}
 
             {/* Mobile Menu Button */}
             <div className="mobile-menu block md:hidden">
